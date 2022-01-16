@@ -308,7 +308,7 @@ namespace diplo.IHM
                 if (this.estInitialise == true)
                 {
                     String dossierActuel = Directory.GetCurrentDirectory();
-                    String cheminExport = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Partie en cours");
+                    String cheminExport = Path.Combine(dossierActuel, "current");
                     String fichierExport;
                     if (this.estRafraichi == true)
                     {
@@ -380,10 +380,10 @@ namespace diplo.IHM
         private void SauvegardeDernierePartie()
         {
             String dossierActuel = Directory.GetCurrentDirectory();
-            String nomFichier = String.Format(@"Cartes & parties\Sauvegardes\Dernier Tour {0} ({1})",
+            String nomFichier = String.Format(@"Dernier Tour {0} ({1})",
                 this.conteneurDonnees.PeriodeCourante,
                 this.conteneurDonnees.PhaseCourante);
-            String cheminFichier = dossierActuel.Replace(@"diplo.IHM\bin\Debug", nomFichier);
+            String cheminFichier = Path.Combine(dossierActuel, "svg", nomFichier);
             this.dernierePartie = cheminFichier;
             this.Sauvegarde(cheminFichier);
         }
@@ -407,14 +407,13 @@ namespace diplo.IHM
                 DateTime.UtcNow.Minute.ToString(),
                 DateTime.UtcNow.Second.ToString(),
                 DateTime.UtcNow.Millisecond.ToString());
-            String geographieParRegion = String.Format(
-                @"Cartes & parties\Sauvegardes\Géographie {0} ({1}).bdat",
+            String geographieParRegion = String.Format("Géographie {0} ({1}).bdat",
                 this.conteneurDonnees.PeriodeCourante.ToString(),
                 cleUnique);
-            geographieParRegion = dossierActuel.Replace(@"diplo.IHM\bin\Debug", geographieParRegion);
+            geographieParRegion = Path.Combine(dossierActuel, "svg", geographieParRegion);
             this.conteneurDonnees.Sauvegarde(geographieParRegion);
 
-            String matriceAdjacence = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Cartes & parties\Configuration initiale - Matrice.bdat");
+            String matriceAdjacence = Path.Combine(dossierActuel, "Configuration initiale - Matrice.bdat");
             String ordres = this.emplacementPhase.Text;
 
             using (StreamWriter redacteur = new StreamWriter(cheminFichier))
@@ -452,8 +451,8 @@ namespace diplo.IHM
         {
             String dossierActuel = Directory.GetCurrentDirectory();
             String donneesCalendaires = "1422:0";
-            String matriceAdjacence = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Cartes & parties\Configuration initiale - Matrice.bdat");
-            String geographieParRegion = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Cartes & parties\Configuration initiale - Géographie.bdat"); ;
+            String matriceAdjacence = Path.Combine(dossierActuel, "assets", "Configuration initiale - Matrice.bdat");
+            String geographieParRegion = Path.Combine(dossierActuel, "assets", "Configuration initiale - Géographie.bdat"); ;
             this.conteneurDonnees = new DonneesProgrammePrincipal(donneesCalendaires, matriceAdjacence, geographieParRegion);
         }
 
@@ -463,7 +462,7 @@ namespace diplo.IHM
         private void ChargeCarteVierge()
         {
             String dossierActuel = Directory.GetCurrentDirectory();
-            String carteACharger = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Cartes & parties\Configuration initiale - Carte.png");
+            String carteACharger = Path.Combine(dossierActuel, "assets", "Configuration initiale - Carte.png");
             this.imageCarte.Load(carteACharger);
             this.imageCarteInterne = Bitmap.FromFile(carteACharger) as Bitmap;
         }

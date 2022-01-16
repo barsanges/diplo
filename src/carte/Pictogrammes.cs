@@ -76,11 +76,11 @@ namespace diplo.Carte
                 String imageACharger;
                 if (occupation.TypeUnite == EUnite.Flotte)
                 {
-                    imageACharger = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Images\Flotte");
+                    imageACharger = Path.Combine(dossierActuel, "assets", "Flotte");
                 }
                 else
                 {
-                    imageACharger = dossierActuel.Replace(@"diplo.IHM\bin\Debug", @"Images\Armée");
+                    imageACharger = Path.Combine(dossierActuel, "assets", "Armée");
                 }
 
                 String identificateurBelligerant = ((Int32)(occupation.PossesseurUnite)).ToString();
