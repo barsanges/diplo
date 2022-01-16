@@ -152,7 +152,7 @@
             this.imageCarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imageCarte.Location = new System.Drawing.Point(12, 45);
             this.imageCarte.Name = "imageCarte";
-            this.imageCarte.Size = new System.Drawing.Size(999, 610);
+            this.imageCarte.Size = new System.Drawing.Size(858, 568);
             this.imageCarte.TabIndex = 1;
             this.imageCarte.TabStop = false;
             this.imageCarte.Paint += new System.Windows.Forms.PaintEventHandler(this.imageCarte_Paint);
@@ -352,15 +352,14 @@
             // metaChampOrdre
             //
             this.metaChampOrdre.ChampsOrdres = null;
-            this.metaChampOrdre.Location = new System.Drawing.Point(1017, 45);
+            this.metaChampOrdre.Location = new System.Drawing.Point(876, 45);
             this.metaChampOrdre.Name = "metaChampOrdre";
-            this.metaChampOrdre.Size = new System.Drawing.Size(240, 700);
             this.metaChampOrdre.TabIndex = 20;
             this.metaChampOrdre.Visible = false;
             //
             // accepterSimulation
             //
-            this.accepterSimulation.Location = new System.Drawing.Point(1077, 275);
+            this.accepterSimulation.Location = new System.Drawing.Point(936, 275);
             this.accepterSimulation.Name = "accepterSimulation";
             this.accepterSimulation.Size = new System.Drawing.Size(116, 52);
             this.accepterSimulation.TabIndex = 21;
@@ -371,7 +370,7 @@
             //
             // refuserSimulation
             //
-            this.refuserSimulation.Location = new System.Drawing.Point(1078, 333);
+            this.refuserSimulation.Location = new System.Drawing.Point(936, 333);
             this.refuserSimulation.Name = "refuserSimulation";
             this.refuserSimulation.Size = new System.Drawing.Size(115, 57);
             this.refuserSimulation.TabIndex = 22;
@@ -458,4 +457,3 @@
         private System.Windows.Forms.Button refuserSimulation;
     }
 }
-
