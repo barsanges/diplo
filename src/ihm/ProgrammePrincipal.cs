@@ -383,7 +383,7 @@ namespace diplo.IHM
             String nomFichier = String.Format(@"Dernier Tour {0} ({1})",
                 this.conteneurDonnees.PeriodeCourante,
                 this.conteneurDonnees.PhaseCourante);
-            String cheminFichier = Path.Combine(dossierActuel, "svg", nomFichier);
+            String cheminFichier = Path.Combine(dossierActuel, nomFichier);
             this.dernierePartie = cheminFichier;
             this.Sauvegarde(cheminFichier);
         }
