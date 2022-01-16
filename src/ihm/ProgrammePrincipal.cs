@@ -308,17 +308,17 @@ namespace diplo.IHM
                 if (this.estInitialise == true)
                 {
                     String dossierActuel = Directory.GetCurrentDirectory();
-                    String cheminExport = Path.Combine(dossierActuel, "current");
                     String fichierExport;
                     if (this.estRafraichi == true)
                     {
-                        fichierExport = String.Format(@"{0}\Carte {1} 0.png", cheminExport, this.conteneurDonnees.PeriodeCourante.ToStringToSort());
+                        fichierExport = String.Format(@"Carte {0} 0.png", this.conteneurDonnees.PeriodeCourante.ToStringToSort());
                     }
                     else
                     {
-                        fichierExport = String.Format(@"{0}\Carte {1} 1.png", cheminExport, this.conteneurDonnees.PeriodeCourante.ToStringToSort());
+                        fichierExport = String.Format(@"Carte {0} 1.png", this.conteneurDonnees.PeriodeCourante.ToStringToSort());
                     }
 
+		    fichierExport = Path.Combine(dossierActuel, fichierExport);
                     imageCarteInterne.Save(fichierExport, System.Drawing.Imaging.ImageFormat.Png);
                 }
             }
@@ -410,10 +410,10 @@ namespace diplo.IHM
             String geographieParRegion = String.Format("Géographie {0} ({1}).bdat",
                 this.conteneurDonnees.PeriodeCourante.ToString(),
                 cleUnique);
-            geographieParRegion = Path.Combine(dossierActuel, "svg", geographieParRegion);
+            geographieParRegion = Path.Combine(dossierActuel, geographieParRegion);
             this.conteneurDonnees.Sauvegarde(geographieParRegion);
 
-            String matriceAdjacence = Path.Combine(dossierActuel, "Configuration initiale - Matrice.bdat");
+            String matriceAdjacence = Path.Combine(dossierActuel, "assets", "Configuration initiale - Matrice.bdat");
             String ordres = this.emplacementPhase.Text;
 
             using (StreamWriter redacteur = new StreamWriter(cheminFichier))
