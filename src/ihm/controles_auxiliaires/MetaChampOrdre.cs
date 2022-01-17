@@ -171,7 +171,7 @@ namespace diplo.Contrôles_auxiliaires
             {
                 Int32 largeurCourante = 20;
                 Int32 hauteurCourante = 04 - vScrollBar.Value;
-                Int32 incrementHauteur = 25;
+                Int32 incrementHauteur = 26;
                 String belligerantPrecedent = this.ChampsOrdres[0].NomBelligerant;
                 this.ChampsOrdres[0].AfficheDrapeau();
                 foreach (ChampOrdre ordre in this.ChampsOrdres)
