@@ -39,7 +39,7 @@
             this.vScrollBar.Location = new System.Drawing.Point(222, 6);
             this.vScrollBar.Maximum = 300;
             this.vScrollBar.Name = "vScrollBar";
-            this.vScrollBar.Size = new System.Drawing.Size(18, 694);
+            this.vScrollBar.Size = new System.Drawing.Size(18, 570);
             this.vScrollBar.SmallChange = 20;
             this.vScrollBar.TabIndex = 0;
             this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
