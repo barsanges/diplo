@@ -5,8 +5,8 @@ offers an interface and a resolution system for home made flavors of
 the board game
 [Diplomacy](https://boardgamegeek.com/boardgame/483/diplomacy).
 
-A [Makefile](Makefile) allows to build the program only Linux, with
-the help of Mono.
+A [Makefile](Makefile) allows to build the program on Linux, with the
+help of Mono.
 
 The syntax of the orders is as follow:
 
